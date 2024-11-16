@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <center>
+        {%if data['up']%}
+        <form method="post">
+            <table>
+                <tr>
+                    <td>
+                        First name</td>
+                    <td><input type="text" name="fname" value="{{data['up'][0]['First_name']}}" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        Last name:</td>
+                    <td><input type="text" name="lname" value="{{data['up'][0]['Last_name']}}" /></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Email:</td>
+                    <td><input type="email" name="email" value="{{data['up'][0]['Email']}}" /></td>
+                </tr>
+                <tr>
+                    <td>Phone:</td>
+                    <td><input type="text" name="phone" value="{{data['up'][0]['Phone']}}" /></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="submit" name="upd" value="Update" />
+                    </td>
+                    <td>
+                        <input type="reset" name="reset" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+        {%else%}
+        <form method="post">
+            <table>
+                <tr>
+                    <td>
+                        First name</td>
+                    <td><input type="text" name="fname" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        Last name:</td>
+                    <td><input type="text" name="lname" /></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Email:</td>
+                    <td><input type="email" name="email" /></td>
+                </tr>
+                <tr>
+                    <td>Phone:</td>
+                    <td><input type="text" name="phone" /></td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        Username:</td>
+                    <td><input type="text" name="uname" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        Password:</td>
+                    <td><input type="password" name="password" /></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="submit" name="submit" />
+                    </td>
+                    <td>
+                        <input type="reset" name="reset" />
+                    </td>
+                </tr>
+
+            </table>
+
+        </form>
+
+        <table border="5" bordercolor="black">
+            <tr>
+                <th>
+                    First name
+                </th>
+                <th>
+                    Last name
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Phone
+                </th>
+                <th colspan="2">
+                    Update data
+                </th>
+            </tr>
+            {%for i in data['view']%}
+            <tr>
+                <td>
+                    {{i['First_name']}}
+                </td>
+                <td>
+                    {{i['Last_name']}}
+                </td>
+                <td>
+                    {{i['Email']}}
+                </td>
+                <td>
+                    {{i['Phone']}}
+                </td>
+                <td>
+                    <a href="?action=update&id={{i['Moderator_id']}}">Update</a>
+                </td>
+                <td>
+                    <a href="?action=delete&id={{i['Moderator_id']}}">Delete data</a>
+                </td>
+
+            </tr>
+            {%endfor%}
+        </table>
+
+
+
+
+    </center>
+
+
+    {%endif%}
+</body>
+
+</html>

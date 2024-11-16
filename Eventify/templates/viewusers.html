@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>
+            Users page
+        </h1>
+        {%for i in data['uview']%}
+        <table border="5" bordercolor="black">
+            <tr>
+                <th>
+                    First name
+                </th>
+                <th>
+                    Last name
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Gender
+                </th>
+                <th>
+                    Phone
+                </th>
+                <th>
+                    Address
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    {{i['First_name']}}
+                </td>
+                <td>
+                    {{i['Last_name']}}
+                </td>
+                <td>
+                    {{i['Email']}}
+                </td>
+                <td>
+                    {{i['Gender']}}
+                </td>
+                <td>
+                    {{i['Phone']}}
+                </td>
+                <td>
+                    {{i['Address']}}
+                </td>
+            </tr>
+            
+        </table>
+        {%endfor%}
+
+        <h1>
+            <center>
+                Blocked users
+            </center>
+        </h1>
+        
+        <table border="5">
+            <tr>
+                <th>
+                    First name
+                </th>
+                <th>
+                    Last name
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Gender
+                </th>
+                <th>
+                    Phone
+                </th>
+                <th>
+                    Address
+                </th>
+            </tr>
+            {%for i in data['bview']%}
+            <tr>
+                <td>
+                    {{i['First_name']}}
+                </td>
+                <td>
+                    {{i['Last_name']}}
+                </td>
+                <td>
+                    {{i['Email']}}
+                </td>
+                <td>
+                    {{i['Gender']}}
+                </td>
+                <td>
+                    {{i['Phone']}}
+                </td>
+                <td>
+                    {{i['Address']}}
+                </td>
+            </tr>
+            
+        </table>
+        {%endfor%}
+        
+       
+    </center>
+    
+</body>
+</html>
